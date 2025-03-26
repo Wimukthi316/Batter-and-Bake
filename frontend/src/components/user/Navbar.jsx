@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { 
   Home, 
   ChefHat, 
@@ -11,31 +12,33 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const Navbar = ({ onNavigate }) => {
+const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const navigate = useNavigate();
+  
   const NavItems = [
     { 
       icon: <Home size={24} />, 
       label: 'Home', 
-      action: () => onNavigate('home') 
+      action: () => navigate('/home')
     },
     { 
       icon: <ChefHat size={24} />, 
       label: 'Feed', 
-      action: () => onNavigate('feed') 
+      action: () => navigate('/feed')
     },
     { 
       icon: <Cookie size={24} />, 
       label: 'Reels', 
-      action: () => onNavigate('reels') 
+      action: () => navigate('/reels')
     },
     { 
       icon: <Users size={24} />, 
       label: 'Network', 
-      action: () => onNavigate('network') 
+      action: () => navigate('/network')
     }
   ];
+  
 
   return (
     <motion.nav 
@@ -74,23 +77,23 @@ const Navbar = ({ onNavigate }) => {
 
           {/* User Actions */}
           <div className="hidden md:flex items-center space-x-4">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => onNavigate('create')}
-              className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-4 py-2 rounded-full"
-            >
-              Share Recipe
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => onNavigate('profile')}
-              className="p-2 rounded-full hover:bg-orange-100"
-            >
-              <User className="text-gray-600" size={24} />
-            </motion.button>
-          </div>
+        <motion.button
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => navigate('/create')}
+          className="bg-gradient-to-r from-orange-500 to-red-600 text-white px-4 py-2 rounded-full"
+        >
+          Share Recipe
+        </motion.button>
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          onClick={() => navigate('/profile')}
+          className="p-2 rounded-full hover:bg-orange-100"
+        >
+          <User className="text-gray-600" size={24} />
+        </motion.button>
+      </div>
 
           {/* Mobile Menu Button */}
           <motion.button
