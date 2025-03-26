@@ -2,8 +2,8 @@ import './App.css'
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom'
 import Home from './pages/user/Home'
 import Feed from './pages/user/Feed'
-
 import Navbar from './components/user/Navbar'
+import Profile from './pages/user/Profile'
 
 function App() {
   return (
@@ -28,6 +28,7 @@ function AppContent() {
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/feed" element={<Feed />} />
+        <Route path="/profile" element={<Profile />} />
         
       </Routes>
     </>
