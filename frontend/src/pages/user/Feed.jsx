@@ -58,7 +58,7 @@ const Feed = () => {
 
   
 
-  const [trendingRecipes, setTrendingRecipes] = useState([
+  const [trendingRecipes] = useState([
     {
       id: 1,
       title: 'Perfect Pasta Carbonara',
@@ -182,16 +182,6 @@ const Feed = () => {
         console.log('Error sharing:', error);
       }
     }
-  };
-
-  // Add these handler functions
-const handleFollow = (chefId) => {
-    setSuggestedChefs(suggestedChefs.map(chef => {
-      if (chef.id === chefId) {
-        return { ...chef, isFollowing: !chef.isFollowing };
-      }
-      return chef;
-    }));
   };
   
   // Add these handler functions

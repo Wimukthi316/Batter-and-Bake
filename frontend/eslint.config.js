@@ -23,7 +23,14 @@ export default [
     rules: {
       ...js.configs.recommended.rules,
       ...reactHooks.configs.recommended.rules,
-      'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+      'no-unused-vars': [
+        'error', 
+        { 
+          varsIgnorePattern: '^([A-Z_]|motion$)', // Added motion to allowed unused vars
+          argsIgnorePattern: '^_',
+          caughtErrorsIgnorePattern: '^_'
+        }
+      ],
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },
