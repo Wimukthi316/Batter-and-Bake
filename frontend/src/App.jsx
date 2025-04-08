@@ -5,6 +5,7 @@ import Feed from './pages/user/Feed'
 import Navbar from './components/user/Navbar'
 import Profile from './pages/user/Profile'
 import Network from './pages/user/Network'
+import Reels from './pages/user/Reels'
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function AppContent() {
         <Route path="/feed" element={<Feed />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/network" element={<Network />} />
+        <Route path="/reels" element={<Reels />} />
       </Routes>
     </>
   )
