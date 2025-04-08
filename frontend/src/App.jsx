@@ -4,6 +4,7 @@ import Home from './pages/user/Home'
 import Feed from './pages/user/Feed'
 import Navbar from './components/user/Navbar'
 import Profile from './pages/user/Profile'
+import Network from './pages/user/Network'
 
 function App() {
   return (
@@ -23,13 +24,13 @@ function AppContent() {
 
   return (
     <>
-            <Navbar onNavigate={handleNavigation} />
+      <Navbar onNavigate={handleNavigation} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/feed" element={<Feed />} />
         <Route path="/profile" element={<Profile />} />
-        
+        <Route path="/network" element={<Network />} />
       </Routes>
     </>
   )
